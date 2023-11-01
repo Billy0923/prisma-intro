@@ -19,6 +19,6 @@ model Author {
 model Book {
   id        Int   @id  @default(autoincrement())
   title     String
-  authorId  Author @relation(fields:[authorId], references:[id], onDelete: Cascade)
+  author    Author @relation(fields:[authorId], references:[id], onDelete: Cascade)
   authorId  Int
 }

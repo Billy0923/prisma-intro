@@ -41,8 +41,11 @@ Ref: "Book"."authorId" > "Author"."id"
 1. Fork and clone this repo. Work in your local repository!
 1. Install the Prisma CLI.\
    `npm install prisma --save-dev`
+   this creates the package.json and the node_modules
 1. Initialize Prisma to use sqlite.\
-   `npx prisma init --datasource-provider sqlite`
+   `npx prisma init --datasource-provider sqlite` 
+   This creates prisma/schema.prisma, after that you need to add .env to .gitignore, 
+   Because it is already there, so you do not need to add .env again
 1. In the generated `.env` file, set `DATABASE_URL` to `"file:books.db"`.
 1. Add models to your `schema.prisma` file according to the database schema above.
 1. Create and run the initial migration.\

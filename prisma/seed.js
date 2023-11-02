@@ -31,13 +31,35 @@ const seed = async (numAuthors = 20, booksPerAuthor = 3) => {
       Array.from() is a quick way to create an array of a certain length
       and fill it with dynamically generated data.
     */
+       const authorsArray=[
+            "Jane Austen",
+            "George Orwell",
+            "Toni Morrison",
+            "J.K. Rowling",
+            "F. Scott Fitzgerald",
+            "Agatha Christie",
+            "Ernest Hemingway",
+            "Gabriel Garcia Marquez",
+            "Harper Lee",
+            "Stephen King",
+            "Maya Angelou",
+            "J.R.R. Tolkien",
+            "Leo Tolstoy",
+            "Mark Twain",
+            "Virginia Woolf",
+            "Franz Kafka",
+            "John Steinbeck",
+            "J.D. Salinger",
+            "Chinua Achebe",
+            "Salman Rushdie"
+        ];
     const createAuthorPromises = Array.from({ length: numAuthors }, (_, i) => {
       const books = Array.from({ length: booksPerAuthor }, (_, j) => ({
         title: `Book ${i}${j}`,
       }));
       return prisma.author.create({
         data: {
-          name: `Author ${i}`,
+          name: `${authorsArray[i]}`,
           book: {
             create: books,
           },
